@@ -1,0 +1,28 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "resume-portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tzjZhengJie/Portfolio.git"
+  },
+  "keywords": [
+    "html",
+    "css"
+  ],
+  "author": "zj",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/tzjZhengJie/Portfolio/issues"
+  },
+  "homepage": "https://github.com/tzjZhengJie/Portfolio#readme",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

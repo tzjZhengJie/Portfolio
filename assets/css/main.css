@@ -1158,7 +1158,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/main.jpg");
+			background-image: url("../../images/main1.jpg");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -1166,14 +1166,14 @@ input, select, textarea {
 		}
 
 		body.is-article-visible #bg:after {
-			-moz-transform: scale(1.0825);
-			-webkit-transform: scale(1.0825);
+			-moz-transform: scale(1.125);
+			-webkit-transform: scale(1.125);
 			-ms-transform: scale(1.0825);
-			transform: scale(1.0825);
-			-moz-filter: blur(0.2rem);
-			-webkit-filter: blur(0.2rem);
-			-ms-filter: blur(0.2rem);
-			filter: blur(0.2rem);
+			transform: scale(1.125);
+			-moz-filter: blur(0.3rem);
+			-webkit-filter: blur(0.3rem);
+			-ms-filter: blur(0.3rem);
+			filter: blur(0.3rem);
 		}
 
 		body.is-preload #bg:before {
@@ -1308,6 +1308,7 @@ input, select, textarea {
 			border-top-width: 1px;
 			border-bottom-width: 1px;
 			max-width: 100%;
+			
 		}
 
 			#header .content .inner {
