@@ -16,7 +16,7 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // Route to serve the main HTML file from the 'html' directory
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'html', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Route to serve the project HTML file from the 'html' directory
