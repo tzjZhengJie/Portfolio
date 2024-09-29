@@ -14,9 +14,14 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 // Middleware to serve static files from the 'images' directory
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
-// Route to serve the main HTML file
+// Route to serve the main HTML file from the 'html' directory
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'html', 'index.html'));
+});
+
+// Route to serve the project HTML file from the 'html' directory
+app.get('/project', (req, res) => {
+  res.sendFile(path.join(__dirname, 'html', 'project.html'));
 });
 
 // Start the server
