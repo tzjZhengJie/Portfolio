@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 // Route to serve the project HTML file from the 'html' directory
 app.get('/project', (req, res) => {
-  res.sendFile(path.join(__dirname, 'html', 'project.html'));
+  res.sendFile(path.join(__dirname, 'project.html'));
 });
 
 // Start the server
