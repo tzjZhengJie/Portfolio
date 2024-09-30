@@ -1776,19 +1776,22 @@ input, select, textarea {
 		
 		.resume-button {
 			text-decoration: none;
-			padding: 1px 10px; /* Padding for the button */
+			padding: 2px 10px; /* Padding for the button */
 			background-color: transparent; /* Transparent background */
-			color: white; /* Text is initially invisible (same color as background) */
+			color: white; /* White text color */
 			border: 2px solid white; /* White border */
 			border-radius: 5px; /* Rounded corners */
 			font-size: 14px; /* Small font size */
-			transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+			box-sizing: border-box; /* Include border in the element's total width and height */
 		}
 		
 		.resume-button:hover {
-			color: white; /* Make text white on hover */
-			background-color: transparent; /* Keep background transparent on hover */
+			/* Explicitly define border on hover to ensure it remains the same */
+			border: 2px solid white; /* Keep the border the same on hover */
+			color: white; /* Keep the text color the same on hover */
+			background-color: transparent; /* Ensure background remains transparent on hover */
 		}
+		
 		
 		
 		
