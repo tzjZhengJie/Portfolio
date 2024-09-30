@@ -91,8 +91,8 @@ input, select, textarea {
 	}
 
 	*, *:before, *:after {
-		box-sizing: inherit;
-	}
+		 box-sizing: border-box;
+	} 
 
 	body {
 		background: #1b1f22;
@@ -1341,42 +1341,54 @@ input, select, textarea {
 			display: -webkit-flex;
 			display: -ms-flex;
 			display: flex;
+			justify-content: center; /* Center items horizontally */
+			align-items: center; /* Center items vertically */
 			margin-bottom: 0;
 			list-style: none;
 			padding-left: 0;
 			border: solid 1px #ffffff;
 			border-radius: 4px;
 		}
+		
+		#header nav ul li {
+			display: flex; /* Make each list item a flex container */
+			justify-content: center; /* Center content horizontally */
+			align-items: center; /* Center content vertically */
+			padding-left: 0;
+			border-left: solid 1px #ffffff;
+		}
+		
+		#header nav ul li:first-child {
+			border-left: 0;
+		}
+		
+		#header nav ul li a {
+			display: flex; /* Make the anchor a flex container */
+			justify-content: center; /* Center content horizontally */
+			align-items: center; /* Center content vertically */
+			min-width: 7.5rem;
+			height: 2.75rem;
+			line-height: 2.75rem;
+			padding: 0 1.25rem 0 1.45rem;
+			text-transform: uppercase;
+			letter-spacing: 0.2rem;
+			font-size: 0.8rem;
+			border-bottom: 0;
+		}
+		
+		#header nav ul li a:hover {
+			background-color: rgba(255, 255, 255, 0.075);
+		}
+		
+		#header nav ul li a:active {
+			background-color: rgba(255, 255, 255, 0.175);
+		}
 
-			#header nav ul li {
-				padding-left: 0;
-				border-left: solid 1px #ffffff;
-			}
-
-				#header nav ul li:first-child {
-					border-left: 0;
-				}
-
-				#header nav ul li a {
-					display: block;
-					min-width: 7.5rem;
-					height: 2.75rem;
-					line-height: 2.75rem;
-					padding: 0 1.25rem 0 1.45rem;
-					text-transform: uppercase;
-					letter-spacing: 0.2rem;
-					font-size: 0.8rem;
-					border-bottom: 0;
-				}
-
-					#header nav ul li a:hover {
-						background-color: rgba(255, 255, 255, 0.075);
-					}
-
-					#header nav ul li a:active {
-						background-color: rgba(255, 255, 255, 0.175);
-					}
-
+		#header nav.use-middle::before {
+			content:none !important;
+			display: none !important;
+		}
+/* 
 		#header nav.use-middle:after {
 			content: '';
 			display: block;
@@ -1386,11 +1398,11 @@ input, select, textarea {
 			width: 1px;
 			height: 100%;
 			background: #ffffff;
-		}
+		} */
 
-		#header nav.use-middle ul li.is-middle {
-			border-left: 0;
-		}
+		/* #header nav.use-middle ul li.is-middle {
+			border-left: 0; 
+		} */
 
 		body.is-article-visible #header {
 			-moz-transform: scale(0.95);
@@ -1716,6 +1728,20 @@ input, select, textarea {
 			font-family: inherit;
 			font-weight: normal;
 		  }
+
+		/* For education*/
+		.responsive-paragraph {
+			display: flex; /* Use Flexbox for alignment */
+			justify-content: space-between; /* Space out the items */
+			align-items: center; /* Align items vertically in the center */
+			font-size: 13px;
+			margin-bottom: 5px;
+		}
+		
+		.date {
+			margin-left: auto; /* Push the date to the far right */
+			font-size: 13px; /* Ensure the font size is consistent */
+		}
 		  
 		  
 		  
