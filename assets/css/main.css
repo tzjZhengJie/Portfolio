@@ -1742,6 +1742,57 @@ input, select, textarea {
 			margin-left: auto; /* Push the date to the far right */
 			font-size: 13px; /* Ensure the font size is consistent */
 		}
+
+		.responsive-resume {
+			margin: 0;
+		}
+		
+		/*resume*/
+		.custom-flex-container {
+			display: flex;
+			justify-content: flex-start; /* Align everything to the left */
+			align-items: center; /* Keep them vertically centered */
+			width: 100%; /* Ensure the container takes full width */
+		}
+		
+		.custom-icons-wrapper {
+			display: flex;
+			align-items: center;
+		}
+		
+		.custom-icons-list {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			display: flex; /* Makes the items in the list appear in a row */
+			gap: 20px; /* Adds spacing between the icons and resume button */
+		}
+		
+		.custom-icons-list li {
+			display: flex;
+			align-items: center;
+			gap: 20px; /* Space between icons and the button */
+		}
+		
+		.resume-button {
+			text-decoration: none;
+			padding: 1px 10px; /* Padding for the button */
+			background-color: transparent; /* Transparent background */
+			color: white; /* Text is initially invisible (same color as background) */
+			border: 2px solid white; /* White border */
+			border-radius: 5px; /* Rounded corners */
+			font-size: 14px; /* Small font size */
+			transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+		}
+		
+		.resume-button:hover {
+			color: white; /* Make text white on hover */
+			background-color: transparent; /* Keep background transparent on hover */
+		}
+		
+		
+		
+		
 		  
 		  
 		  
