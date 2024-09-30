@@ -1772,7 +1772,15 @@ input, select, textarea {
 			display: flex;
 			align-items: center;
 			gap: 20px; /* Space between icons and the button */
+			text-decoration: none;
+            outline: none; /* Remove focus outline */
+			color: inherit;
+			padding: 10px;
 		}
+		.custom-icons-list li a:focus {
+            outline: none; /* Remove focus outline */
+			text-decoration: none;
+        }
 		
 		.resume-button {
 			text-decoration: none;
