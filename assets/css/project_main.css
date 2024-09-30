@@ -27,7 +27,8 @@ section, summary, time, mark, audio, video {
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;}
+	display: block;
+}
 
 body {
 	line-height: 1;
@@ -35,6 +36,10 @@ body {
 
 ol, ul {
 	list-style: none;
+}
+
+b {
+	font-weight: bold;
 }
 
 blockquote, q {
@@ -188,12 +193,17 @@ input, select, textarea {
 		letter-spacing: 0.075em;
 		text-transform: uppercase;
 		margin: 0 0 1rem 0;
+		
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			border-bottom: 0;
-			color: inherit;
 			text-decoration: none;
+			color: white !important;
+		}
+
+		b {
+			color: white !important
 		}
 
 	h1 {
@@ -2911,6 +2921,11 @@ input, select, textarea {
 
 	header {
 		cursor: default;
+		
+	}
+	
+	article header h2 {
+			color: white !important;	
 	}
 
 		header > .date {
@@ -2999,7 +3014,7 @@ input, select, textarea {
 		}
 
 	header.major .date:before, header.major .date:after {
-		border-top-color: #eeeeee;
+		border-top-color: #ffff;
 	}
 
 /* Table */
@@ -3758,7 +3773,7 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		background-color: #ffffff;
+		background-color: rgba(27, 31, 34, 1);
 		position: relative;
 		margin: 0 auto;
 		width: calc(100% - 4rem);
@@ -4878,6 +4893,7 @@ input, select, textarea {
 		list-style-position: inside; /* Ensure list markers are inside the content */
 		text-align: justify; /* Justify text */
 		font-size: 16px;
+		color: white;
 	}
 	
 	.project-details li {
