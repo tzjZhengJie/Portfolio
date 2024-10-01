@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>BikeStores Project</title>
+		<title>Crime Rates Statistical Analysis</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/project_main.css" />
@@ -19,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a class="logo">Crimerate Statistical Significance</a>
+						<a class="logo">Crime Rates Statistical Analysis</a>
 					</header>
 
 				<!-- Nav -->
@@ -73,129 +73,67 @@
 
 								<!-- Text stuff -->
 									<h2 style="margin-top: -40px;">Description</h2>
-									<p> I developed interactive dashboards that provide a comprehensive view
-										of BikeStores' revenue breakdown across various factors, such as store name, yearly, 
-										monthly, and more.</p>
-										<h4>Skills Applied: <span class="skills">SQL, Excel, Tableau</span></h4>
+									<li> First I preprocess my data that are in different csv files, by cleaning them with Pandas, removing null values, changing variable names to a much more suitable
+										name, and dropping columns that are not needed. I then concatenate them into a single dataframe for Feature Engineering. 
+									</li>
+									<li>
+										Next, I perform Feature Engineering by creating new columns that are useful for my analysis. Such as separating between urban and rural areas population in percentage format, 
+										logarithmic scaling on variables for a better distribution and correlation testing, and standardizing my data formats such as converting days to years.
+									</li>
+									<li>
+										Lastly, I perform Pearson Correlation Testing, which compares linearly, to find out which variables are statistically significant to assault crime rate. 
+									</li>
+										<h4>Skills Applied: <span class="skills">Python (Pandas), Inferential Statistics </span></h4>
 										
 									<hr />
-									<h2>Implementation</h2>
-										<ul>
-											<li>
-												Demonstrated proficiency in <b>SQL</b> for data exploration, employing various functions like 
-												<b>JOIN, WHERE, CONCAT, and SUM</b> to extract and transform relevant columns, 
-												enabling informed analysis.
-											</li>
-											<li>
-												Leveraged <b>Excel's powerful Pivot Tables</b> to import and analyze the SQL dataset, effectively 
-												creating <b>visually engaging charts</b>. <b>Merged</b> multiple charts into a comprehensive 
-												dashboard, enhanced with <b>Slicers</b> to make the dashboard interactive.
-											</li>
-											<li>
-												Went the extra mile to showcase skills by developing an additional dashboard using 
-												<b>Tableau</b>, further exemplifying expertise in <b>data visualization</b>. 
-												
-											</li>
-
-										</ul>
-									
-									<hr />
+								
 									<header>
 										<h2>Breakdown</h2>
-										<p><b><span class="skills">SQL</span></b></p>
 									</header>
-									<span class="image fit"><img src="images/BikeStores/BikeStores (SQL).png" alt="" /></span>
+									<h4 style="margin-top: 60px;">1. Preprocessing</h4>
+									<span class="image fit"><img src="images/static/crimerate/preprocess.png" alt="" /></span>
 									<p>
 										<ul>
 											<li>
-												In the initial stages of my project, I began by examining multiple tables and 
-												analyzing the necessary columns required for its implementation.
+												In the initial stages of my project, I began by examining multiple csv files containing data on crime rates and demographics of 
+												various United States States and regions.
 											</li>
 											<li>
-												Subsequently, I employed the <b>JOIN</b> function, also known as INNER JOIN, 
-												to merge disparate tables by leveraging their interconnected columns.
-											</li>
-											<li>
-												Additionally, I utilized the <b>GROUP BY</b> and <b>ORDER BY</b> clauses to ensure that 
-												my aggregate functions yield the desired output.
-											</li>
-											<li>
-												Lastly, through the implementation of the <b>SELECT FROM</b> function, I specified the columns 
-												that I wished to include in the resulting table.
+												Subsequently, I studied the data and identified the need for <b>data preprocessing</b> to ensure that the data is clean, before considering what dataframe to 
+												utilised for my analysis; dropping columns that are not needed, and changing variable names to a much more suitable name.
 											</li>
 										</ul>
 									</p>
-									
-									<header style="margin-top: 60px;">
-										<p><b><span class="skills">Excel</span></b></p>
-									</header>
-									<h4>1. Importing Dataset to Excel</h4>
+									<h4 style="margin-top: 60px;">2. Feature Engineering</h4>
 									<p>
-										<span class="image left"><img src="images/BikeStores/Excel (Import data).png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+										<span class="image fit"><img src="images/static/crimerate/feature_urban_rural.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
 										<ul>
 											<li>
-												In the subsequent phase, I opted to employ Excel as my tool of choice for 
-												crafting a comprehensive dashboard.
+												I proceeded with feature engineering by creating new columns or grouping my data that would be useful for my analysis.			
 											</li>
-											<li>
-												Firstly, I imported my SQL dataset into Excel by carrying out the following steps:
-												<b>Get Data -> From Database -> From SQL Server Database</b>												
-											</li>
-											<li>
-												Excel will then display my exact dataset which I setup using SQL <b>as shown below</b>.
-											</li>
+											<li>For example, I grouped the population of urban and rural areas into percentage format, to better understand the distribution of population across different regions.</li>
+											<span class="image fit"><img src="images/static/crimerate/lang_long.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+											<li>Additionally, I grouped by langitude and longitude with its measure into like tropical, sub-tropical, temperate, equator, west hemisphere, etc.</li>
 										</ul> 
 									</p>
-									<span class="image fit"><img src="images/BikeStores/Excel Table.png" alt="" /></span>
 
-									<h4 style="margin-top: 60px;">2. Create Pivot Tables</h4>
-									<span class="image fit"><img src="images/BikeStores/Pivot Tables.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+									<h4 style="margin-top: 60px;">3. Pearson Correlation Testing</h4>
+									<span class="image fit"><img src="images/static/crimerate/pearson.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
 									<p>
 										<ul>
 											<li>
-												Subsequently, I proceeded with the creation of the necessary <b>Pivot Tables</b> that would 
-												serve as foundational components for the subsequent development of my dashboard.
+												Lastly, through the implementation of the pearson correlation, I was able to identify my null hypothesis, and alternative hypothesis. With pearson
+												correlation (p-value), I was able to find out which variables are statistically significant to assault crime rate.
 											</li>
+											<span class="image fit"><img src="images/static/crimerate/heatmap.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+											<li>Additionally, a heatmap was generated to visually inspect the correlation between all variables.</li>
+											
+											<h4 style="margin-top: 60px;">4. Conclusion</h4>
+											<span class="image fit"><img src="images/static/crimerate/conclusion.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+											<li>Through own hypothesis, I was able to come out with conclusions on which variables are statistically signficant in correspond to assult rate.</li>
 										</ul>
 									</p>
-									
-									<h4 style="margin-top: 60px;">3. Create Dashboard</h4>									
-									<span class="image fit"><img src="images/BikeStores/Excel Dashboard.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
-									<p>
-										<ul>
-											<li>
-												I established a distinctive <b>title</b> for my dashboard, encapsulating its purpose and providing a clear 
-												identifier for users.
-											</li>
-											<li>
-												Next, I strategically <b>organized and optimized</b> the arrangement of charts within the dashboard to 
-												<b>effectively communicate information</b> to stakeholders.
-											</li>
-											<li>
-												Finally, I leveraged the use of <b>Slicers</b> to enhance the interactivity of the dashboard, empowering stakeholders to 
-												<b>dynamically explore and analyze</b> the data according to their specific needs and preferences.
-											</li>
-										</ul>
-									</p>
-									
-									<header style="margin-top: 60px;">
-										<p><b><span class="skills">Tableau</span></b></p>
-									</header>
-									<h4>Alternative Dashboard</h4>
-									<span class="image fit"><img src="images/BikeStores/Tableau Dashboard.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
-									<p>
-										<ul>
-											<li>
-												I extended my efforts by creating an <b>alternative Tableau dashboard</b>, augmenting the analytical 
-												capabilities and providing an enhanced visual experience for data visualization.
-											</li>
-											<li>
-												To enhance dashboard interactivity, I incorporated <b>dynamic filters</b> on relevant charts, empowering users
-												to interactively explore and refine data presentation based on their specific needs.
-											</li>											
-										</ul>
-									</p>
-
+													
 
 									<ul class="actions fit" style="margin-top: 100px;">
 										<li><a href="/project" class="button primary fit">Go back to Projects homepage</a></li>
