@@ -24,8 +24,12 @@ app.get('/project', (req, res) => {
   res.sendFile(path.join(__dirname, 'project.html'));
 });
 
-app.get('/BikeStores', (req, res) => {
-  res.sendFile(path.join(__dirname, 'BikeStores.html'));
+app.get('/python', (req, res) => {
+  res.sendFile(path.join(__dirname, 'python.html'));
+});
+
+app.get('/Crimerate', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Crimerate.html'));
 });
 
 // Start the server
