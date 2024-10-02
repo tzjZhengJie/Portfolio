@@ -36,7 +36,7 @@ app.get('/Crimerate', (req, res) => {
   res.sendFile(path.join(__dirname, 'Crimerate.html'));
 });
 
-app.get('/job-finding-hackathon', (req, res) => {
+app.get('/hackathon', (req, res) => {
   res.sendFile(path.join(__dirname, 'hackathon.html'));
 });
 
