@@ -29,7 +29,7 @@
 							<a href="/">Home</a>
 						</li>
 						<li class="active">
-							<a href="/project">Back to Projects Homepage</a>
+							<a href="/statistics">Back to Projects Homepage</a>
 						</li>	
 					</ul>
 					<ul class="icons">						 
@@ -73,17 +73,11 @@
 
 								<!-- Text stuff -->
 									<h2 style="margin-top: -40px;">Description</h2>
-									<li> First I preprocess my data that are in different csv files, by cleaning them with Pandas, removing null values, changing variable names to a much more suitable
-										name, and dropping columns that are not needed. I then concatenate them into a single dataframe for Feature Engineering. 
-									</li>
-									<li>
-										Next, I perform Feature Engineering by creating new columns that are useful for my analysis. Such as separating between urban and rural areas population in percentage format, 
-										logarithmic scaling on variables for a better distribution and correlation testing, and standardizing my data formats such as converting days to years.
-									</li>
-									<li>
-										Lastly, I perform Pearson Correlation Testing, which compares linearly, to find out which variables are statistically significant to assault crime rate. 
-									</li>
-										<h4>Skills Applied: <span class="skills">Python (Pandas), Inferential Statistics </span></h4>
+									<li>Cleaned and renamed variables, dropped unnecessary columns, and concatenated data into a single dataframe.</li>
+									<li>Created new columns via feature engineering, applied logarithmic scaling, and standardized data formats.</li>
+									<li>Identified variables significant to assault crime rate using Pearson Correlation Testing.</li>
+									<br>
+									<h4>Skills Applied: <span class="skills">Python, Inferential Statistics </span></h4>
 										
 									<hr />
 								
@@ -91,7 +85,7 @@
 										<h2>Breakdown</h2>
 									</header>
 									<h4 style="margin-top: 60px;">1. Preprocessing</h4>
-									<span class="image fit"><img src="images/static/crimerate/preprocess.png" alt="" /></span>
+									<span class="image fit"><img src="images/static/crimerate/preprocess.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);" /></span>
 									<p>
 										<ul>
 											<li>
@@ -123,18 +117,22 @@
 										<ul>
 											<li>
 												Lastly, through the implementation of the pearson correlation, I was able to identify my null hypothesis, and alternative hypothesis. With pearson
-												correlation (p-value), I was able to find out which variables are statistically significant to assault crime rate.
+												correlation (p-value), I was able to find out which variables are linearly-statistical significant to assault crime rate.
 											</li>
 											<span class="image fit"><img src="images/static/crimerate/heatmap.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
 											<li>Additionally, a heatmap was generated to visually inspect the correlation between all variables.</li>
-											
-											<h4 style="margin-top: 60px;">4. Conclusion</h4>
-											<span class="image fit"><img src="images/static/crimerate/conclusion.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
-											<li>Through own hypothesis, I was able to come out with conclusions on which variables are statistically signficant in correspond to assult rate.</li>
 										</ul>
 									</p>
-													
-
+									
+									<h4 style="margin-top: 60px;">4. Conclusion</h4>
+											<span class="image fit"><img src="images/static/crimerate/conclusion.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+											<li>Through own hypothesis, I was able to come out with conclusions on which variables are statistically signficant in correspond to assult rate.</li>
+											
+											<h4 style="margin-top: 60px;">5. improvements</h4>		
+											<li>Additionally, there are some improvements to this project, for example I should've done Spearman correlation test for monotonic relationship.
+												I assumed the variables are in a linear relationship, which may not be the case.</li>
+											<li>I could've add on Confidence Interval to assess the correlation test to provide precision and reliability of my correlation estimates.</li>
+									
 									<ul class="actions fit" style="margin-top: 100px;">
 										<li><a href="/project" class="button primary fit">Go back to Projects homepage</a></li>
 										<li><a href="#" class="button fit">Back to top</a></li>										

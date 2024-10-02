@@ -24,12 +24,20 @@ app.get('/project', (req, res) => {
   res.sendFile(path.join(__dirname, 'project.html'));
 });
 
-app.get('/python', (req, res) => {
-  res.sendFile(path.join(__dirname, 'python.html'));
+app.get('/statistics', (req, res) => {
+  res.sendFile(path.join(__dirname, 'statistics.html'));
+});
+
+app.get('/AIML', (req, res) => {
+  res.sendFile(path.join(__dirname, 'aiml.html'));
 });
 
 app.get('/Crimerate', (req, res) => {
   res.sendFile(path.join(__dirname, 'Crimerate.html'));
+});
+
+app.get('/job-finding-hackathon', (req, res) => {
+  res.sendFile(path.join(__dirname, 'hackathon.html'));
 });
 
 // Start the server
