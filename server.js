@@ -37,7 +37,7 @@ app.get('/Crimerate', (req, res) => {
 });
 
 app.get('/introabtest', (req, res) => {
-  res.sendFile(path.join(__dirname, 'intro_ab.html'));
+  res.sendFile(path.join(__dirname, 'introab.html'));
 });
 
 app.get('/hackathon', (req, res) => {
