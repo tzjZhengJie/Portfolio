@@ -72,6 +72,14 @@
 								</header> -->
 
 								<!-- Text stuff -->
+									<h2 style="margin-top: -40px;">Description:</h2>
+									<li>This project consist of marketing data such as different type of test groups: advertisements and public service announcements.</li>
+									<li>Total amount of "test group" the customers have seen. (total ads)</li>
+									<li>The day where the customer have seen the "test group" the MOST. (most ads day)</li>
+									<li>The time where the customer have seen the largest amount of "test group". (most ad hours)</li>
+									<li>Conversion of customer that have bought the product. (converted) </li>
+									<br><br>
+
 									<h2 style="margin-top: -40px;">Questions to ask:</h2>
 									<li>Which variables have associataion with the customer's conversion rate?</li>
 									<li>What sort of hypothesis test or visualization to analyze the variable?</li>
@@ -113,10 +121,13 @@
 									<span class="image fit"><img src="images/static/ab_test/chi-square.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
 									<p>
 										<ul>
+											<b>Purpose:</b>
 											<li>
 												Chi-Square Test is used to determine if there is an association between two categorical variables. 
 											</li>
-                                            <li>Residuals are utilised to determine observations and expectations, while Cramér's V is for the strength of association.</li>
+											<li>Residuals are utilised to determine observations and expectations, while Cramér's V is for the strength of association.</li><br>
+											<b>Interpretations:</b>
+                                
 											<li>There is a association between the day users see the ads and their conversion likelihood. However, cramer's V suggest that this association is relatively weak.</li>
                                             <li>Users seeing ads most frequently on Monday tend to convert more, while Saturday seems to have the least conversion.</li>
                                             
@@ -125,51 +136,59 @@
                                             <li>This will then be tested as well to determine the association between timing and conversion rate.</li>
 
                                             <span class="image fit"><img src="images/static/ab_test/ad_hours_chi_square.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
-                                            <li>There is a statistically significant relationship between time slots and conversion rates, although the strength of this association is weak.
+                                            <b>Interpretations:</b>
+											<li>There is a statistically significant relationship between time slots and conversion rates, although the strength of this association is weak.
                                             <li>The Afternoon time slot has the highest conversion rates, suggesting it may be the best time to reach users.
                                         </ul>
 									</p>
 									
 									<h4 style="margin-top: 60px;">4. A/B Test for equality of proportion</h4>
 											<span class="image fit"><img src="images/static/ab_test/z-test.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+											<b>Purpose:</b>
 											<li>The purpose of this test is to evaluate the efficacy of different test groups (categorical variable).</li>
                                             <li>The test groups consist of advertisements and public service announcements. I want to determine which group performs better.</li>
                                             <li>This is where the Z-test for two proportions is applied.</li>
 											
 											<span class="image fit"><img src="images/static/ab_test/normalindpower.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>	
+											<b>Explanation:</b>
 											<li>Before I start with the Z-test, I need to check how many samples I need to assume normality.</li>
                                             <li>This is when NormalIndPower() comes into the play.</li>
                                             <li>Without an appripriate amount of sample size, this could lead to Type I or Type II errors.</li>
 
                                             <span class="image fit"><img src="images/static/ab_test/z-test-ct.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
-                                            <li>A higher Z-statistic (positive) suggests that the first group (success_ad) has a higher proportion compared to the second group (success_psa).</li>	
+                                            <b>Interpretations:</b>
+											<li>A higher Z-statistic (positive) suggests that the first group (success_ad) has a higher proportion compared to the second group (success_psa).</li>	
                                             <li>This indicates that there is a statistically significant difference in the proportions of conversions between the ad group and the PSA group. The difference in the proportions is not due to random chance.</li>
                                             <li>However, we have to look into odds ratio to determine the likelihood of converting.</li>
                                            
                                             <span class="image fit"><img src="images/static/ab_test/odd_ratio.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
-                                            <b> Overall Interpretation: </b>
+                                            <b>Interpretations: </b>
                                             <li> There is a statistical significant difference in conversion rates between the ad and psa groups.
                                             <li> The conversion rate in ad group is slightly higher than in the PSA group, however the odds ratio suggest that the users exposed to ad have a lower odds of converting than those exposed to PSA.
                                             <li> While the ad group had a higher conversion percentage, the odds ratio indicates that users in the PSA group had a better relative chance of converting compared to the ad group, when accounting for odds rather than raw proportions.
                                     
                                     <h4 style="margin-top: 60px;">5. Continuous Variable Hypothesis Tests</h4>
                                             <span class="image fit"><img src="images/static/ab_test/levene_shapiro.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
-                                            <li>Before considering what sort of test I will be using, levene's and shapiro test will be implemented
+                                            <b>Explanation:</b>
+											<li>Before considering what sort of test I will be using, <b>levene's</b> and <b>shapiro</b> test will be implemented
                                                 to determine the homogenous of variance and normality of the data.
                                             </li>
-                                            <li>Assumption of normality and equal homogeneity of variance: independent t-test</li>
-                                            <li>Assumption of normality and not equal variances: Welch's t-test</li>
-                                            <li>When both assumptions fail: Mann-Whitney U Test</li>
+											
+                                            <li>Assumption of normality and equal homogeneity of variance: <b>Independent t-test</b></li>
+                                            <li>Assumption of normality and not equal variances: <b>Welch's t-test</b></li>
+                                            <li>When both assumptions fail:<b> Mann-Whitney U Test</b></li>
                                             <span class="image fit"><img src="images/static/ab_test/mannu.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
-                                            <li>Thus, Mann-Whitney U Test is utilised to determine the significant difference between total ads that the customers seen and conversion rate.</li>
-                                            <li>Following, effect-size is implemented to look at the relationship between the variables.</li>
                                             <b>Interpretation:</b>
+											<li>Thus, Mann-Whitney U Test is utilised to determine the significant difference between total ads that the customers seen and conversion rate.</li>
+                                            <li>Following, effect-size is implemented to look at the relationship between the variables.</li>
+                                            
                                             <li>Strong inverse relationship between conversion and total ads: Users who did not convert saw more ads than those who converted.</li>    
                                     <h4 style="margin-top: 60px;">6. Conclusion</h4>
-                                            <li>This project provided valuable insights into the application of various statistical tests in A/B Testing, including Chi-Square Test, Z-test for two proportions, and Mann-Whitney U Test.</li>
-                                            <li>Through this analysis, I was able to identify significant associations and differences between test groups, as well as understand the impact of different variables on conversion rates.</li>
-                                            <li>The findings highlight the importance of selecting appropriate statistical methods based on data characteristics and ensuring sufficient sample sizes to avoid errors.</li>
-                                            <li>Overall, this project enhanced my understanding of A/B Testing methodologies and their practical implications in real-world scenarios.</li>
+                                        
+											<li>Ads vs. PSAs: While ads showed a marginally higher raw conversion rate, PSAs demonstrated a stronger relative likelihood of conversion based on the odds ratio.</li>
+											<li>Day and time of exposure are critical factors in conversion rates, indicating that strategically timed marketing campaigns could enhance user engagement and attraction.</li>
+											<li>Total ads test indicate that increased ad frequency leads to diminishing conversion rates. Reducing ad exposure while focusing on message quality could improve overall effectiveness.</li>
+
 									<ul class="actions fit" style="margin-top: 100px;">
 										<li><a href="/project" class="button primary fit">Go back to Projects homepage</a></li>
 										<li><a href="#" class="button fit">Back to top</a></li>										
