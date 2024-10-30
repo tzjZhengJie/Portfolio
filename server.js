@@ -40,6 +40,10 @@ app.get('/introab', (req, res) => {
   res.sendFile(path.join(__dirname, 'introab.html'));
 });
 
+app.get('/gameab', (req, res) => {
+  res.sendFile(path.join(__dirname, 'gameab.html'));
+});
+
 app.get('/hackathon', (req, res) => {
   res.sendFile(path.join(__dirname, 'hackathon.html'));
 });

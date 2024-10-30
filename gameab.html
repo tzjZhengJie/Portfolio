@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mobile Game A/B Testing</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/project_main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/project_noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a class="logo">Mobile Game A/B Testing</a>
+					</header>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul class="links">
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li class="active">
+							<a href="/statistics">Back to Projects Homepage</a>
+						</li>	
+					</ul>
+					<ul class="icons">						 
+						<li><a href="https://www.linkedin.com/in/tan-zheng-jie/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/tzjZhengJie" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						
+						<li>
+							<a href="https://public.tableau.com/app/profile/tan.zheng.jie/vizzes" class="icon brands alt fa-tableau tableau-icon">
+								<span class="circle1">
+								  <img src="images/logo-tableau.png" width="20" height="20" style="filter: invert(1);"></span>
+								<span class="label">Tableau</span>
+							</a>
+						</li>
+					</ul>
+					  
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+						
+						<!-- Post -->												
+							<section class="post">																						
+								<!-- <header class="major">												
+									<div class="center-image-div">
+										<img src="images/static/da.png" style="margin-top: -30px; border: 1px solid rgba(0, 0, 0, 0.2);">
+
+										<p class="icon-container">
+											<a href="https://github.com/YannKJY/Data-Analyst-Portfolio-Projects/blob/main/Full%20Project/BikeStores%20(SQL%20%2B%20Excel%20%2B%20Tableau).zip" class="icon brands alt fa-github">
+											  <span class="label">GitHub</span>
+											</a>
+										  
+											<a href="https://public.tableau.com/app/profile/yann.kang/viz/BikeStoresDashboard_16840834640260/Dashboard1" class="icon brands alt fa-tableau tableau1-icon">
+											  <img src="images/logo-tableau.png" alt="Tableau Icon" width="22" height="22" style="margin-top: 5px; ">
+											  <span class="label">Tableau</span>
+											</a>
+										  </p>
+
+									</div>
+									
+								</header> -->
+
+								<!-- Text stuff -->
+									<h2 style="margin-top: -40px;">Description:</h2>
+                                    <b>The mobile game, Cookie Cats, updated the "gate" from level 30 to level 40, where the "gate" is a game mechanic used to regulate players' progression by introducing a waiting period before they can access new levels.  </b><br>
+                                    <br><br><h2 style="margin-top: -40px;">Data:</h2>
+									<li>userid - a unique number that identifies each player.</li>
+                                    <li>version - whether the player was put in the control group (gate_30 - a gate at level 30) or the test group (gate_40 - a gate at level 40).</li>
+                                    <li>sum_gamerounds - the number of game rounds played by the player during the first week after installation</li>
+                                    <li>retention_1 - did the player come back and play 1 day after installing?</li>
+                                    <li>retention_7 - did the player come back and play 7 days after installing?</li>
+									<br><br>
+
+									<h2 style="margin-top: -40px;">Questions to ask:</h2>
+									<li>Did the update have an impact on the retention rate or overall activity of users?</li>
+									<li>What sort of hypothesis test or visualization to analyze the variable?</li>
+									<li>What are the interpretation of my findings?</li>
+									<br>
+										
+									<hr />
+								
+									<header>
+										<h2>Breakdown</h2>
+									</header>
+									<h4 style="margin-top: 60px;">1. Visualization</h4>
+									<span class="image fit"><img src="images/static/ab_test/total_games.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);" /></span>
+									<p>
+										<ul>
+											<li>
+												Started off with cleaning the data, by looking for nulls, empty data, duplicated data and
+                                                removing outliers with IQR method.
+											</li>
+											<li>
+												After cleaning, I plotted out the distribution of the total users VS the total games played. 
+											</li>
+                                            <li>The quantiles is able to describe the distribution- where a small percentage of players played many rounds, while the majority played relatively few rounds.</li>
+										</ul>
+									</p>
+									<h4 style="margin-top: 60px;">2. Feature Engineering</h4>
+									<p>
+										<span class="image fit"><img src="images/static/ab_test/ratio.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+										<ul>
+											<li>
+										    I proceeded to extract new features by calculating the ratio of retention_1 and retention_7 to sum_gamerounds.</li>
+                                            <li>From my findings, 55% of the players didn't play the game 1 day after installing, while
+                                                81% of the players didnt play the game 7 days after installing</li>
+                                        <span class="image fit"><img src="images/static/ab_test/ratio_new.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+										<ul>
+                                            <li>I continued to group the data into versions, combining retention_1 and retention_7, and aggregrate the data into statistical forms</li>
+                                            <br>
+                                            <b>Observations:</b><br>
+                                            <li>For both versions, players in the True-True group (retained on both day 1 and day 7) tend to have the highest median, mean, and maximum game rounds, indicating that these players are the most engaged.</li>
+                                            <li>The False-False group has the lowest median and mean values, showing that players who were not retained at both intervals played significantly fewer game rounds.</li>
+                                            <li>The standard deviation (std) is much higher in groups with higher mean and maximum values, indicating a wider spread of game rounds played by players in these groups (likely because some very active players skew the data)</li>
+                                        </ul>
+                                    </p>
+
+									<h4 style="margin-top: 60px;">3. Bootstrapping</h4>
+									<span class="image fit"><img src="images/static/ab_test/bootstrap.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+									<p>
+										<ul>
+											<b>Description:</b>
+											<li>
+												It is a procedure for estimating the distribution of an estimator by resampling.
+											</li>
+                                            <li>Despite having a decent sample size (~90k), I decided to use bootstrapping due to the highly-skewed distribution of the data.</li>
+											<br>
+											<b>Interpretations:</b>
+                                
+											<li>There's minimal overlap between the two distributions, indicating a likely significant difference between the versions.</li>
+                                            <li>gate_30 appears to be performing better on the measured metric, as its distribution is shifted to the right.</li>
+                                            
+                                            <span class="image fit"><img src="images/static/ab_test/bootstrap_prob.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+                                            <li>I proceeded to plot the boostrap in percentage difference, which shows that the probability of gate_30 being better than gate_40 is 96.3%.</li>
+                                            <li>I continued to do this for retention_7 variable.</li>
+                                            <br>
+                                            <b>Observations:</b>
+                                            <li>The bootstrap shows the performance of retention_1 and retention_7 based on different versions- which in this case gate_30 is better than gate_40.</li>
+                                            <li>However, I do not know the performance, in terms of "sum of games played" by users based on different versions.</li>
+                                        </ul>
+									</p>
+									
+									<h4 style="margin-top: 60px;">4. A/B Testing</h4>
+											<span class="image fit"><img src="images/static/ab_test/ab_game_test.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+											<li>I proceeded to split 2 different versions into group A and B, and did parametric test and homogenity of variance test.</li>
+											<li>Based on the result, Mann-Whitney U Test is implemented due to non-parametric.</li>
+											<span class="image fit"><img src="images/static/ab_test/mannwhitneyab.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>	
+											
+                                            <li>I did a right-tail test to see if gate_30 (A) is statistically significant to gate_40 (B), as the bootstrapping claims.</li>
+                                            <li>The results show that A is better than B, however effect-size suggests that the difference isn't big.</li>
+   
+                                    <h4 style="margin-top: 60px;">6. Conclusion</h4>
+
+                                    <b>Summary:</b><br>
+                                    Although Group A does have a statistical significance over Group B when it comes to total amount of games played, however the effect-size suggest that the significance is minimal to real-world context.
+                                    <br>
+                                    This suggest that players activity of retention in 1 day or 7 days are statistically significance to the version of gate30 and gate40. However, when comes to the overall activity of total games played, the significance is very minimal.<br>
+                                    <b>Recommendations:</b>
+                                    <li> To improve retention rates for both 1-day and 7-day periods, setting the gate at level 30 appears to be a more effective strategy compared to level 40. This suggests that players are more likely to stay engaged with the game in the short term when the gate is at level 30.
+                                    
+                                    <li>However, this improvement in retention does not necessarily translate to an increase in the total number of rounds played by users. While level 30 may help keep players around longer in the early stages, further strategies may be needed to increase overall player activity and engagement.
+
+									<ul class="actions fit" style="margin-top: 100px;">
+										<li><a href="/project" class="button primary fit">Go back to Projects homepage</a></li>
+										<li><a href="#" class="button fit">Back to top</a></li>										
+									</ul>
+							</section>
+						<!--END OF POST-->
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">						
+					<section class="split contact">							
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">						 
+								<li><a href="https://www.linkedin.com/in/tan-zheng-jie/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/tzjZhengJie" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								
+								<li>
+									<a href="https://public.tableau.com/app/profile/tan.zheng.jie/vizzes" class="icon brands alt fa-tableau tableau-icon">
+										<span class="circle1">
+											<img src="images/logo-tableau.png" width="20" height="20" style="filter: invert(1);"></span>
+										<span class="label">Tableau</span>
+									</a>
+								</li>															  															  
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>&copy; Chris, Tan Zheng Jie's Portfolio</li><li></a></li></ul>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/project_js/jquery.min.js"></script>
+			<script src="assets/project_js/jquery.scrollex.min.js"></script>
+			<script src="assets/project_js/jquery.scrolly.min.js"></script>
+			<script src="assets/project_js/browser.min.js"></script>
+			<script src="assets/project_js/breakpoints.min.js"></script>
+			<script src="assets/project_js/util.js"></script>
+			<script src="assets/project_js/main.js"></script>
+
+	</body>
+</html>
